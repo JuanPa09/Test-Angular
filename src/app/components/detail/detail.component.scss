@@ -1,0 +1,19 @@
+.title-content{
+    font-size: 1.1rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.body-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.body-title{
+    margin-right: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.body-data{
+    font-style: italic;
+}

@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/form"
+            >Formulario</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Detalle</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Formulario</h1>
+  <form [formGroup]="dataForm" (ngSubmit)="submitInfo()">
+    Nombre:
+    <input
+      [class.is-invalid]="
+        dataForm.get('name')?.touched && dataForm.get('name')?.invalid
+      "
+      type="text"
+      class="form-control"
+      formControlName="name"
+    />
+    Celular:
+    <input
+      [class.is-invalid]="
+        dataForm.get('phone')?.touched && dataForm.get('phone')?.invalid
+      "
+      type="tel"
+      class="form-control"
+      formControlName="phone"
+    />
+    Dirección:
+    <input
+      [class.is-invalid]="
+        dataForm.get('address')?.touched && dataForm.get('address')?.invalid
+      "
+      type="tel"
+      class="form-control"
+      formControlName="address"
+    />
+    Departamento:
+    <select
+      [class.is-invalid]="
+        dataForm.get('department')?.touched &&
+        dataForm.get('department')?.invalid
+      "
+      (ngModel)="(departments)"
+      class="form-control"
+      formControlName="department"
+    >
+      <option *ngFor="let el of departments" [value]="el">
+        {{ el }}
+      </option>
+    </select>
+    Concesionario:
+    <select
+      [class.is-invalid]="
+        dataForm.get('concessionaire')?.touched &&
+        dataForm.get('concessionaire')?.invalid
+      "
+      (ngModel)="(concessionaire)"
+      class="form-control"
+      formControlName="concessionaire"
+    >
+      <option *ngFor="let el of concessionaire" [value]="el">
+        {{ el.toUpperCase() }}
+      </option>
+    </select>
+    Agente:
+    <input
+      [class.is-invalid]="
+        dataForm.get('agent')?.touched && dataForm.get('agent')?.invalid
+      "
+      type="text"
+      class="form-control"
+      formControlName="agent"
+    />
+    Vehículo:
+    <input
+      [class.is-invalid]="
+        dataForm.get('vehicle')?.touched && dataForm.get('vehicle')?.invalid
+      "
+      type="text"
+      class="form-control"
+      formControlName="vehicle"
+    />
+    <br />
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
