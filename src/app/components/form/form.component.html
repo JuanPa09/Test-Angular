@@ -31,6 +31,7 @@
   <form [formGroup]="dataForm" (ngSubmit)="submitInfo()">
     Nombre:
     <input
+      id="name"
       [class.is-invalid]="
         dataForm.get('name')?.touched && dataForm.get('name')?.invalid
       "
@@ -40,6 +41,7 @@
     />
     Celular:
     <input
+      id="phone"
       [class.is-invalid]="
         dataForm.get('phone')?.touched && dataForm.get('phone')?.invalid
       "
@@ -49,6 +51,7 @@
     />
     Dirección:
     <input
+      id="address"
       [class.is-invalid]="
         dataForm.get('address')?.touched && dataForm.get('address')?.invalid
       "
@@ -58,6 +61,7 @@
     />
     Departamento:
     <select
+      id="department"
       [class.is-invalid]="
         dataForm.get('department')?.touched &&
         dataForm.get('department')?.invalid
@@ -72,6 +76,7 @@
     </select>
     Concesionario:
     <select
+      id="concessionaire"
       [class.is-invalid]="
         dataForm.get('concessionaire')?.touched &&
         dataForm.get('concessionaire')?.invalid
@@ -86,6 +91,7 @@
     </select>
     Agente:
     <input
+      id="agent"
       [class.is-invalid]="
         dataForm.get('agent')?.touched && dataForm.get('agent')?.invalid
       "
@@ -95,6 +101,7 @@
     />
     Vehículo:
     <input
+      id="vehicle"
       [class.is-invalid]="
         dataForm.get('vehicle')?.touched && dataForm.get('vehicle')?.invalid
       "

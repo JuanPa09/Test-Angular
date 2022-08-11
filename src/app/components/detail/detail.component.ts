@@ -11,83 +11,31 @@ export class DetailComponent implements OnInit {
 
   data = [
     {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia magnolias Escuintla, Escuintla",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia ma",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia magnolias Escuintla",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia magnolias Escuintla, Escuintla",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia magnolias Escuintla, Escuintla",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia magnolias Escuintla, Escuintla",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
-    },
-    {
-      name: "Juan Pablo Ardon Lopez",
-      phone: 30237820,
-      address: "14 calle 7-05 zona 5 colonia magnolias Escuintla, Escuintla",
-      department: "Escuintla",
-      agent: "Luis Bolaños",
-      concessionaire: "Concesionario Sur",
-      vehicle: "Mazda 3"
+      name: "Nombre cliente",
+      phone: 12345678,
+      address: "Dirección Cliente",
+      department: "Departamento Cliente",
+      agent: "Nombre Agente",
+      concessionaire: "Nombre Concesionario",
+      vehicle: "Descripción Vehículo"
     }
   ]
+
+  apiUrl:string = "https://nameless-escarpment-55713.herokuapp.com/info"
 
   constructor(private http: HttpClient) { }
 
 
   ngOnInit(): void {
+    this.getData()
   }
+
+  getData(){
+    this.http.get(this.apiUrl).subscribe((res:any)=>{
+      this.data = res
+    })
+  }
+
+
 
 }
