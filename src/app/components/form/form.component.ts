@@ -85,6 +85,7 @@ export class FormComponent implements OnInit {
         (result: any) => {
           if (result.status == 200) {
             alert('Información Cargada.');
+            window.location.reload();
           }
         },
         (err: any) => {
